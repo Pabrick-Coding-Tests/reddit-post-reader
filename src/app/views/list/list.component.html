@@ -1,0 +1,5 @@
+<section  *ngIf="service.list">
+
+  <list-element *ngFor="let elem of service.list" [(data)]="elem.data"></list-element>
+
+</section>
