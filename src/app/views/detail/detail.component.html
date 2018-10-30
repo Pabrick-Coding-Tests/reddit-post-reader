@@ -1,32 +1,25 @@
 <div class="detail">
 
-  <div  *ngIf="!current">LOADING</div>
+  <div class="list-loading" *ngIf="!current">LOADING POST</div>
 
     <div class="list-element" *ngIf="current">
 
-        <div class="thumbnail" (click)="seeDetail()">
-          <img *ngIf="current.thumbnail" src="{{ current.thumbnail }}">
-        </div>
-      
-        <div class="info">
-          <span class="title">{{ current.title }}</span>
-      
-          <div class="votes">
-              <div class="ups">
-                <button (click)="voteUp()">UP</button>
-                <span>{{ current.ups }}</span>
-              </div>
-              <div class="downs">
-                <button (click)="voteDown()">DOWN</button>
-                <span>{{ current.downs }}</span>
-              </div>
-          </div>
-          
-        </div>
-
-        <img class="image" *ngIf="current.url" src="{{ current.url }}">
-      
+      <div class="thumbnail" (click)="seeDetail()">
+        <img *ngIf="current.thumbnail" src="{{ current.thumbnail }}">
       </div>
+    
+      <div class="info">
+        <span class="title" (click)="seeDetail()">{{ current.title }}</span>
+        <div class="votes">
+          <button class="ups" (click)="voteUp()"></button>
+          <div class="votes-numbers"><span>{{ current.ups }}</span> / <span>{{ current.downs }}</span></div>
+          <button class="downs" (click)="voteDown()"></button>
+        </div>
+      </div>
+
+      <img class="image" *ngIf="current.url" src="{{ current.url }}">
+    
+    </div>
   
   <button class="button-list" (click)="navigateToList()">BACK TO LIST</button>
 

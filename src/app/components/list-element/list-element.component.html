@@ -1,21 +1,16 @@
-<div class="list-element" >
+<div class="list-element">
 
   <div class="thumbnail" (click)="seeDetail()">
     <img *ngIf="data.thumbnail" src="{{ data.thumbnail }}">
   </div>
 
   <div class="info">
-    <span class="title">{{ data.title }}</span>
+    <span class="title" (click)="seeDetail()">{{ data.title }}</span>
 
     <div class="votes">
-        <div class="ups">
-          <button (click)="voteUp()">UP</button>
-          <span>{{ data.ups }}</span>
-        </div>
-        <div class="downs">
-          <button (click)="voteDown()">DOWN</button>
-          <span>{{ data.downs }}</span>
-        </div>
+      <button class="ups" (click)="voteUp()"></button>
+      <div class="votes-numbers"><span>{{ data.ups }}</span> / <span>{{ data.downs }}</span></div>
+      <button class="downs" (click)="voteDown()"></button>
     </div>
     
   </div>
